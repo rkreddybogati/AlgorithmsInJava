@@ -1,15 +1,15 @@
-package com.rk.linkedlists;
+package com.rk.linkedlists.singley;
 
 /**
  * Created by rbhogati on 10/7/17.
  */
-public class LinkedList {
+public class SinglyLinkedList{
 
     private Node start;
     private Node end;
     private int size;
 
-    public LinkedList() {
+    public SinglyLinkedList() {
         start = null;
         end = null;
         size = 0;
@@ -21,6 +21,14 @@ public class LinkedList {
 
     public int getSize(){
         return size;
+    }
+
+    public Node getStart() {
+        return start;
+    }
+
+    public void setStart(Node start) {
+        this.start = start;
     }
 
     // Add Node at Start
@@ -100,8 +108,22 @@ public class LinkedList {
         size--;
     }
 
+    public void reverseLinkedList(){
+        Node next = null;
+        Node current = start;
+        Node prev = null;
+
+        while (current != null) {
+            next = current.getNextLink();
+            current.nextLink = prev;
+            prev = current;
+            current = next;
+        }
+        start = prev;
+    }
+
     public void display(){
-        System.out.print("Singly LinkedList Dispaying Down.");
+        System.out.println("Singly LinkedList Dispaying Down.");
         if (size == 0) {
             System.out.print("No Value");
             return;
@@ -116,7 +138,7 @@ public class LinkedList {
             System.out.print(""+ptr.getData()+"->");
             ptr = ptr.getNextLink();
         }
-        System.out.print(""+ptr.getData()+"\n");
+        System.out.print(""+ptr.getData()+"\n\n");
     }
 
 

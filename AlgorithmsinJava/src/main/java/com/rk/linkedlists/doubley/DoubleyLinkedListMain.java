@@ -1,11 +1,11 @@
-package com.rk.linkedlists;
+package com.rk.linkedlists.doubley;
 
 import java.util.Scanner;
 
 /**
- * Created by rbhogati on 10/7/17.
+ * Created by rbhogati on 12/7/17.
  */
-public class SinglyLinkedList {
+public class DoubleyLinkedListMain {
 
     public static void main(String[] args)
 
@@ -13,11 +13,11 @@ public class SinglyLinkedList {
 
         Scanner scan = new Scanner(System.in);
 
-        /* Creating object of class linkedList */
+        /* Creating object of linkedList */
 
-        LinkedList list = new LinkedList();
+        DoubleyLinkedList list = new DoubleyLinkedList();
 
-        System.out.println("Singly Linked List Test\n");
+        System.out.println("Doubly Linked List Test\n");
 
         char ch;
 
@@ -27,7 +27,7 @@ public class SinglyLinkedList {
 
         {
 
-            System.out.println("\nSingly Linked List Operations\n");
+            System.out.println("\nDoubly Linked List Operations\n");
 
             System.out.println("1. insert at begining");
 
@@ -41,55 +41,57 @@ public class SinglyLinkedList {
 
             System.out.println("6. get size");
 
+
+
             int choice = scan.nextInt();
 
             switch (choice)
 
             {
 
-                case 1:
+                case 1 :
 
                     System.out.println("Enter integer element to insert");
 
-                    list.insertAtSrart(scan.nextInt());
+                    list.insertAtStart( scan.nextInt() );
 
                     break;
 
-                case 2:
+                case 2 :
 
                     System.out.println("Enter integer element to insert");
 
-                    list.insertAtEnd(scan.nextInt());
+                    list.insertAtEnd( scan.nextInt() );
 
                     break;
 
-                case 3:
+                case 3 :
 
                     System.out.println("Enter integer element to insert");
 
-                    int num = scan.nextInt();
+                    int num = scan.nextInt() ;
 
                     System.out.println("Enter position");
 
-                    int pos = scan.nextInt();
+                    int pos = scan.nextInt() ;
 
-                    if (pos <= 1 || pos > list.getSize())
+                    if (pos < 1 || pos > list.getSize() )
 
                         System.out.println("Invalid position\n");
 
                     else
 
-                        list.insertAtPostion(num, pos);
+                        list.insertAtPosition(num, pos);
 
                     break;
 
-                case 4:
+                case 4 :
 
                     System.out.println("Enter position");
 
-                    int p = scan.nextInt();
+                    int p = scan.nextInt() ;
 
-                    if (p < 1 || p > list.getSize())
+                    if (p < 1 || p > list.getSize() )
 
                         System.out.println("Invalid position\n");
 
@@ -99,19 +101,19 @@ public class SinglyLinkedList {
 
                     break;
 
-                case 5:
+                case 5 :
 
-                    System.out.println("Empty status = " + list.isEmpty());
-
-                    break;
-
-                case 6:
-
-                    System.out.println("Size = " + list.getSize() + " \n");
+                    System.out.println("Empty status = "+ list.isEmpty());
 
                     break;
 
-                default:
+                case 6 :
+
+                    System.out.println("Size = "+ list.getSize() +" \n");
+
+                    break;
+
+                default :
 
                     System.out.println("Wrong Entry \n ");
 
@@ -127,9 +129,6 @@ public class SinglyLinkedList {
 
             ch = scan.next().charAt(0);
 
-        } while (ch == 'Y' || ch == 'y');
-
+        } while (ch == 'Y'|| ch == 'y');
     }
-
-
 }

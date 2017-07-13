@@ -1,4 +1,4 @@
-package com.rk.linkedlists;
+package com.rk.linkedlists.singley;
 
 /**
  * Created by rbhogati on 10/7/17.
