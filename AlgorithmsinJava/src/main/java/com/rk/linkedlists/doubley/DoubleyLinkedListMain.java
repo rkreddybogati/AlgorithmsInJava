@@ -24,37 +24,20 @@ public class DoubleyLinkedListMain {
         /*  Perform list operations  */
 
         do
-
         {
-
             System.out.println("\nDoubly Linked List Operations\n");
-
             System.out.println("1. insert at begining");
-
             System.out.println("2. insert at end");
-
             System.out.println("3. insert at position");
-
             System.out.println("4. delete at position");
-
             System.out.println("5. check empty");
-
             System.out.println("6. get size");
-
-
-
             int choice = scan.nextInt();
-
             switch (choice)
-
             {
-
                 case 1 :
-
                     System.out.println("Enter integer element to insert");
-
                     list.insertAtStart( scan.nextInt() );
-
                     break;
 
                 case 2 :
